@@ -8,10 +8,10 @@
 
 // Event handling, user interaction is what starts the code execution.
 
-let taskInput=document.getElementById("new-task");//Add a new task.
-let addButton=document.getElementsByTagName("button")[0];//first button
-let incompleteTaskHolder=document.getElementById("incompleteTasks");//ul of #incompleteTasks
-let completedTasksHolder=document.getElementById("completed-tasks");//completed-tasks
+let taskInput=document.querySelector(".task");//Add a new task.
+let addButton=document.querySelector(".add");//first button
+let incompleteTaskHolder=document.querySelector(".incomplete-tasks");//ul of #incompleteTasks
+let completedTasksHolder=document.querySelector(".completed-tasks");//completed-tasks
 
 
 //New task list item
@@ -79,7 +79,7 @@ let editTask=function(){
       label.innerText=editInput.value;
       editBtn.innerText="Edit";
   }
-  else{
+  else {
       editInput.value=label.innerText;
       editBtn.innerText="Save";
   }  
