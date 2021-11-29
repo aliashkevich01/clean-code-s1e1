@@ -5,14 +5,12 @@
 //Solution: Add interactivity so the user can manage daily tasks.
 //Break things down into smaller steps and take each step at a time.
 
-
 // Event handling, user interaction is what starts the code execution.
 
 let taskInput=document.querySelector(".task");//Add a new task.
 let addButton=document.querySelector(".add");//first button
 let incompleteTaskHolder=document.querySelector(".incomplete-tasks");//ul of #incompleteTasks
 let completedTasksHolder=document.querySelector(".completed-tasks");//completed-tasks
-
 
 //New task list item
 let createNewTaskElement=function(taskString){  
@@ -54,6 +52,7 @@ let createNewTaskElement=function(taskString){
   listItem.appendChild(deleteButton);
   return listItem;
 }
+
 let addTask=function(){
   //Create a new list item with the text from the #new-task:
   if (!taskInput.value) return;
@@ -87,7 +86,6 @@ let editTask=function(){
   listItem.classList.toggle("editMode");
 };
 
-
 //Delete task.
 let deleteTask=function(){
   let listItem=this.parentNode;
@@ -95,7 +93,6 @@ let deleteTask=function(){
   //Remove the parent list item from the ul.
   ul.removeChild(listItem);  
 }
-
 
 //Mark task completed
 let taskCompleted=function(){
@@ -117,20 +114,16 @@ let taskIncomplete=function(){
   bindTaskEvents(listItem,taskCompleted);
 }
 
-
-
 let ajaxRequest=function(){
   console.log("AJAX Request");
 }
 
 //The glue to hold it all together.
 
-
 //Set the click handler to the addTask function.
 addButton.onclick=addTask;
 addButton.addEventListener("click",addTask);
 addButton.addEventListener("click",ajaxRequest);
-
 
 let bindTaskEvents=function(taskListItem,checkBoxEventHandler){
   console.log("bind list item events");
